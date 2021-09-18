@@ -1,5 +1,5 @@
 import kleur from 'kleur';
-import { compare } from 'uvu/diff';
+import { compare } from '@nurdiansyah/uvu/diff';
 
 let isCLI = false, isNode = false;
 let hrtime = (now = Date.now()) => () => (Date.now() - now).toFixed(2) + 'ms';

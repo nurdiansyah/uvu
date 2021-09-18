@@ -1,5 +1,5 @@
-const { test } = require('uvu');
-const assert = require('uvu/assert');
+const { test } = require('@nurdiansyah/uvu');
+const assert = require('@nurdiansyah/uvu/assert');
 const math = require('../../math');
 
 test('sum', () => {

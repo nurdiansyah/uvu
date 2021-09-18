@@ -1,5 +1,5 @@
-import { suite } from 'uvu';
-import * as assert from 'uvu/assert';
+import { suite } from '@nurdiansyah/uvu';
+import * as assert from '@nurdiansyah/uvu/assert';
 import * as $ from '../src/assert';
 
 function isError(err, msg, input, expect, operator, details) {

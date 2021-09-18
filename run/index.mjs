@@ -1,4 +1,4 @@
-import { exec } from 'uvu';
+import { exec } from '@nurdiansyah/uvu';
 
 export async function run(suites, opts={}) {
 	let suite, idx=0;

@@ -1,5 +1,5 @@
 import { dequal } from 'dequal';
-import { compare, lines } from 'uvu/diff';
+import { compare, lines } from '@nurdiansyah/uvu/diff';
 
 function dedent(str) {
 	str = str.replace(/\r?\n/g, '\n');

@@ -1,5 +1,5 @@
-import { suite } from 'uvu';
-import * as assert from 'uvu/assert';
+import { suite } from '@nurdiansyah/uvu';
+import * as assert from '@nurdiansyah/uvu/assert';
 import * as $ from '../src/diff';
 
 const strip = str => str.replace(/[\u001B\u009B][[\]()#;?]*(?:(?:(?:[a-zA-Z\d]*(?:;[-a-zA-Z\d\/#&.:=?%@~_]*)*)?\u0007)|(?:(?:\d{1,4}(?:;\d{0,4})*)?[\dA-PR-TZcf-ntqry=><~]))/g, '');
