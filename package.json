@@ -1,6 +1,6 @@
 {
   "name": "@nurdiansyah/uvu",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "repository": "lukeed/uvu",
   "description": "uvu is an extremely fast and lightweight test runner for Node.js and the browser",
   "module": "dist/index.mjs",
@@ -62,10 +62,10 @@
     "test"
   ],
   "dependencies": {
-    "dequal": "^2.0.0",
+    "dequal": "^2.0.2",
     "diff": "^5.0.0",
-    "kleur": "^4.0.3",
-    "sade": "^1.7.3",
+    "kleur": "^4.1.4",
+    "sade": "^1.7.4",
     "totalist": "^2.0.0"
   },
   "devDependencies": {
