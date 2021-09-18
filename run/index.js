@@ -1,4 +1,4 @@
-const { exec } = require('uvu');
+const { exec } = require('@nurdiansyah/uvu');
 
 exports.run = async function (suites, opts={}) {
 	globalThis.UVU_DEFER = 1;
