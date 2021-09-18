@@ -23,9 +23,9 @@ sade('uvu [dir] [pattern]')
 			let ctx = await parse(dir, pattern, opts);
 
 			if (!ctx.requires && hasImport) {
-				await dimport('uvu/run').then(m => m.run(ctx.suites, opts));
+				await dimport('@nurdiansyah/uvu/run').then(m => m.run(ctx.suites, opts));
 			} else {
-				await require('uvu/run').run(ctx.suites, opts);
+				await require('@nurdiansyah/uvu/run').run(ctx.suites, opts);
 			}
 		} catch (err) {
 			console.error(err.stack || err.message);
