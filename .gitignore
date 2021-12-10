@@ -6,9 +6,9 @@ node_modules
 
 /*.d.ts
 
-/dist
-/assert
-/parse
-/diff
+/dist.*
+/assert.*
+/parse.*
+/diff.*
 .idea
-./.index.*
+/index.*

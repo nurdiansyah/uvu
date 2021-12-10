@@ -3,53 +3,35 @@
   "version": "0.5.4",
   "repository": "lukeed/uvu",
   "description": "uvu is an extremely fast and lightweight test runner for Node.js and the browser",
-  "module": "dist/index.mjs",
-  "main": "dist/index.js",
-  "types": "index.d.ts",
   "license": "MIT",
   "bin": {
     "uvu": "bin.js"
   },
+  "main": "index.js",
+  "module": "index.mjs",
+  "types": "types/index.d.ts",
   "exports": {
     ".": {
-      "require": "./dist/index.js",
-      "import": "./dist/index.mjs"
-    },
-    "./assert": {
-      "require": "./assert/index.js",
-      "import": "./assert/index.mjs"
-    },
-    "./diff": {
-      "require": "./diff/index.js",
-      "import": "./diff/index.mjs"
-    },
-    "./parse": {
-      "require": "./parse/index.js",
-      "import": "./parse/index.mjs"
-    },
-    "./run": {
-      "require": "./run/index.js",
-      "import": "./run/index.mjs"
+      "import": "./index.mjs",
+      "require": "./index.js"
     }
   },
   "files": [
-    "*.js",
-    "*.d.ts",
-    "assert",
-    "parse",
-    "diff",
-    "dist",
-    "run"
+    "*",
+    "!src",
+    "!tests"
   ],
-  "modes": {
-    "diff": "src/diff.js",
-    "parse": "src/parse.js",
-    "assert": "src/assert.js",
-    "default": "src/index.js"
-  },
   "scripts": {
-    "build": "bundt",
-    "test": "node test"
+    "build": "run-p build:rollup build:tsc",
+    "build:rollup": "rollup -c",
+    "build:tsc": "rimraf types && tsc",
+    "lint": "eslint --fix 'src/**/*.ts'",
+    "test": "uvu -r ts-node/register",
+    "test:all": "pnpm run test src \".*/__tests__\"",
+    "test:watch": "watchlist src -- pnpm test src",
+    "bump": "pnpm run build && bump -c \"release api v\"",
+    "release": "pnpm run bump -- -t \"api-v\" && pnpm publish",
+    "release:dev": "git add . && pnpm run bump -- -p prerelease && pnpm publish --tag dev --no-git-checks"
   },
   "engines": {
     "node": ">=8"
@@ -69,9 +51,14 @@
     "totalist": "^2.0.0"
   },
   "devDependencies": {
+    "@nurdiansyah/rollup": "^1.6.8",
     "bundt": "1.1.1",
     "esm": "3.2.25",
-    "module-alias": "2.2.2"
+    "module-alias": "2.2.2",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.61.0",
+    "typescript": "^4.5.3"
   },
   "_moduleAliases": {
     "uvu": "src/index.js",
